@@ -56,6 +56,18 @@
                 </div>
                 <h3 class="profile-title">LJX</h3>
                 <p class="profile-description">的网站</p>
+				<div style="text-align: center; margin-top: 200px;">
+				<h3><label id="time" style="color: #AC2925; "></label></h3>
+				</div>
+				<script>
+				function mytime(){
+				var a = new Date();
+				var b = a.toLocaleTimeString();
+				var c = a.toLocaleDateString();
+				document.getElementById("time").innerHTML = c+"&nbsp"+b;
+				}
+				setInterval(function() {mytime()},1000);
+				</script>
             </div> <!-- top-section -->
             <div class="main-navigation">
                 <ul class="navigation">
