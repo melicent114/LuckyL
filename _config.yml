@@ -1,87 +1,118 @@
-# Site settings 配置站点
-title: '廖柯宇的独立博客'
-description: '昵称悟空，千禧一代，前端开发者/伪极客/灵魂摄影师，热爱技术&设计。很高兴能在这里与你分享我对技术和生活的思考。'
-keyword: '廖柯宇, 廖柯宇的独立博客, 廖柯宇的博客, 前端, 前端开发, 前端博客, javascript, vuejs, nodejs, 设计'
-url: '' # your host
+# Site settings
+title: ivo Blog
+SEOTitle: 老王的自留地 | ivo Blog
+header-img: "img/tag.jpg"
+email: wxtbeyond@gmail.com
+description: 这里是老王的自留地，一切都是老王和媳妇老张说了算，爱写啥写啥，也不打算开放评论，就这样吧。 #"Every failure is leading towards success."
+keyword: "ivo, ivo Blog, linux, network, IVO, 老王, 网络, 技巧"
+url: "http://ivo-wang.github.io"          # your host, for absolute URL
+baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
+github_repo: "https://github.com/ivo-wang/ivo-wang.github.io.git" # you code repository
 
-# when build blog on server, if you don't need baseurl, you should leave this value blank.
-# 在服务器上建站时，如果你不需要子域名，请将这一格留空
-# if you're using GitHub Pages, set baseurl to your blog's .
-# 如果你在使用 GitHub Pages, 请将 baseurl 设置为你的网址的子域名
-# for example, if your site is "kaeyleo.github.io", then this url should leave blank.
-# 例如，当你的域名是 "kaeyleo.github.io"  时，这个 url 需要留空
-# but if your created a repo named "myblog", and the site is "kaeyleo.github.io/myblog", change baseurl to '/myblog'
-# 但是，如果你创建了一个叫 "myblog" 的网站，此时网址会变成 "kaeyleo.github.io/myblog" ，这时再将 baseurl 设置为 '/myblog'
-baseurl: ''
+# Sidebar settings
+sidebar: true                           # whether or not using Sidebar.
+sidebar-about-description: "写写字为了不忘记!"
+sidebar-avatar: /img/lookup.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
-# Navigation links
-nav:
-  home: '/'
-  tags: '/tags.html'
 
-# Footer
-footer:
-  since: 2017
 
-# Author 配置博主信息
-author: '廖柯宇'
-nickname: '悟空'
-bio: '前端开发者，热爱技术&设计，简单乐观爱创造'
-avatar: '/assets/img/profile.png'
+# SNS settings
+RSS: true
+# weibo_username:     qiubaiying
+zhihu_username:     xiceman
+github_username:    ivo-wang
+#facebook_username:  baiying.qiu.7
+#jianshu_username:   e71990ada2fd
+twitter_username:   IvoWang
 
-# Search
-search: true
 
-# Night mode
-nightMode: true
 
-# Comments 评论功能
-comments:
-  disqus: false
-  disqus_url: 'https://liaokeyu.disqus.com/embed.js'
-
-# MathJax 公式支持 by Ray-Eldath
-mathjax: true
-
-# Share
-social-share: true
-social-share-items: ['wechat', 'weibo', 'douban', 'twitter']
-
-# theme color 主题皮肤
-theme-color: 'default'  # pink or default
-
-# Post header background patterns (when the post no cover): circuitBoard, overlappingCircles, food, glamorous, ticTacToe, seaOfClouds
-postPatterns: 'circuitBoard'
-
-# SNS settings 配置社交网站
-# url: email, weibo, zhihu, twitter, instagram, juejin, github, douban, facebook, dribble, uicn, jianshu, medium, linkedin
-sns:
-  weibo: '//weibo.com/lovecolcol'
-  juejin: '//juejin.im/user/57a6f434165abd006159b4cc'
-  instagram: '//www.instagram.com/steveliaocn'
-  github: '//github.com/kaeyleo'
-
-# Tags 设置标签
-recommend-tags: true # whether or not display recommend-tags on the sidebar
-recommend-condition-size: 12 # a tag will be recommended if the size of it is more than this value
 
 # Build settings
-paginate: 6
-paginate_path: 'page:num'
-exclude: ['node_modules', 'dev', 'package.json', 'gulpfile.js', '.gitignore', 'README.md']
+# from 2016, 'pygments' is unsupported on GitHub Pages. Use 'rouge' for highlighting instead.
+permalink: pretty
+paginate: 10
+exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
+anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html`
 
-# Markdown
+
+
+# Gems
+# from PR#40, to support local preview for Jekyll 3.0
+gems: [jekyll-paginate]
+
+
+
+
+# Markdown settings
+# replace redcarpet to kramdown,
+# although redcarpet can auto highlight code, the lack of header-id make the catalog impossible, so I switch to kramdown
+# document: http://jekyllrb.com/docs/configuration/#kramdown
 markdown: kramdown
 highlighter: rouge
+#highlighter: coderay
 kramdown:
-  input: GFM
+  input: GFM                            # use Github Flavored Markdown !important
 
-# RSS
-RSS: false
 
-# Permalink
-# See: https://github.com/kaeyleo/jekyll-theme-H2O/issues/35
-permalink: /:year/:month/:day/:title.html
 
-# Plugins
-plugins: [jekyll-paginate]
+# 评论系统
+# Disqus（https://disqus.com/）
+# disqus_username: qiubaiying
+
+
+##############准备搞
+# Gitalk
+#gitalk:
+#  enable: true    #是否开启Gitalk评论
+#  clientID: f2c84e7629bb1446c1a4   #生成的clientID
+#  clientSecret: ca6d6139d1e1b8c43f8b2e19492ddcac8b322d0d  #同上
+#  repo: qiubaiying.github.io    #仓库名称
+#  owner: qiubaiying    #github用户名
+#  admin: qiubaiying
+#  distractionFreeMode: true #是否启用类似FB的阴影遮罩
+#####################
+
+# 统计
+
+# Analytics settings
+# Baidu Analytics
+#######################################ba_track_id: 38b740cf9ad0c9cecb234043f940f095 
+
+# Google Analytics
+########################################ga_track_id: 'UA-113204747-2'            # Format: UA-xxxxxx-xx
+########################################ga_domain: https://ezlost.tk               # 默认的是 auto, 这里我是自定义了的域名，你如果没有自己的域名，需要改成auto
+ga_domain: auto               # 默认的是 auto, 这里我是自定义了的域名，你如果没有自己的域名，需要改成auto
+
+
+
+
+
+# Featured Tags
+featured-tags: true                     # 是否使用首页标签
+featured-condition-size: 3              # 相同标签数量大于这个数，才会出现在首页
+
+
+
+# Progressive Web Apps
+chrome-tab-theme-color: "#000000"
+service-worker: true
+
+
+
+# Friends
+friends: [
+    {
+        title: "linux中国",
+        href: "http://linux.cn"
+    },{
+        title: "linux命令行",
+        href: "http://man.linuxde.net/"
+    },{
+        title: "害虫",
+        href: "http://ezlost.com"
+    },{
+        title: "谷歌开发者",
+        href: "https://developers.google.cn/"
+    }
+]
