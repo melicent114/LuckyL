@@ -1,45 +1,56 @@
-title: LuckyL #博客标题
-description: hello #博客描述
-keywords: blog,css,html,php #博客关键字
-author: "LL"
+# SITE CONFIGURATION
+baseurl: "/Type-on-Strap"
+url: "https://sylhare.github.io"
 
-#title hide and show
-hide: (つェ⊂)我藏好啦
-show: ´∇｀ 呀被发现啦
+# THEME-SPECIFIC CONFIGURATION
+title: Type on Strap                                    # site's title
+description: "A website with blog posts and pages"      # used by search engines
+avatar: assets/img/triangle.png                         # Empty for no avatar in navbar
+favicon: assets/favicon.ico                             # Icon displayed in the tab
 
-baseurl: "" # change this to the subpath of your site, e.g. /blog. Leave it empty if you don't need it.
-url: "https://melicent114.github.io/LuckyL/" # change this to the base hostname & protocol for your site
-buildtime: "1514736000" #博客建立时的时间戳 可进入https://tool.lu/timestamp/将博客建立时的日期转换成时间戳
-           #The timestamp at the time of blog establishment can be entered at https://tool.lu/timestamp/to convert the date at the time of blog establishment into a timestamp.
+# Header and footer text
+header_text: Change <code>header_text</code> in <code>_config.yml</code>  # Change Blog header text
+header_feature_image: assets/img/pexels/triangular.jpeg
+footer_text: >
+  Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/sylhare/Type-on-Strap">Type on Strap</a>
 
-PJAX: true #启用PJAX，会与评论系统冲突（如不用评论系统建议开启）
+# Blog
+excerpt: true                                           # Or "truncate" (first 250 characters), "false" to disable
+post_navigation: true
+color_image: /assets/img/lineart.png                    # A bit transparent for color posts.
 
-paginate: 8 #同时显示的最大文章数，超过自动分页
-paginate_path: "page:num"
+# Features
+# More in the _data folder for share buttons, author and language
+# For layout customization, go to the "_sass > base" folder, and check "_variables.scss"
+katex: true                                             # Enable if using math markup
+mermaid: true                                           # Enable mermaid-js for sequence and diagrams
+google_analytics:                                       # Tracking ID, e.g. "UA-000000-01"
+cookie_consent: false                                   # To respect the usage of cookies
+color_theme: auto                                       # auto, dark or light
 
-background: https://api.dujin.org/bing/1920.php
-theme_color: 546E7A
+# Comments
+comments:
+  disqus_shortname:                                     # Your discus shortname for comments
+  cusdis_app_id:                                        # Your cusdis data-app-id
+  utterances:                                           # Enable by filling below information. For more info, go to https://utteranc.es
+    repo:                                               # your public comments repository (e.g. owner/repo)
+    issue-term:                                         # Issue term (e.g. "comment" consider issues with this word in the title as comments)
 
-# hydrogen-blog date format
-# refer to http://shopify.github.io/liquid/filters/date/ if you want to customize this
-hydrogen-blog:
-  date_format: "%b %-d, %Y"
+# PAGINATION
+paginate: 5
+paginate_path: "/blog/page:num"
 
-#MathJax switch
-MathJax: false
+# PORTFOLIO
+collections:
+  portfolio:
+    output: true
+    permalink: /:collection/:name
 
-#install emoji
-plugins:
-  - jemoji
+# BUILD SETTINGS
+sass:
+  style: compressed
+plugins: [jekyll-paginate, jekyll-seo-tag, jekyll-feed]
+exclude: [".jekyll-cache", ".idea", "vendor/*", "assets/node_modules/*"]
 
-# social account
-image:
-twitter:
-  username:
-#  site:
-facebook:
-  #publisher: null
-  #profile_id: null
-  app_id: null
-  #authors: null
-#  admins:
+# theme: type-on-strap                                  # if using the theme as a jekyll theme gem
+remote_theme: sylhare/Type-on-Strap                     # If using as a remote_theme in github
