@@ -9,13 +9,13 @@
 
 语言：简体中文 | [English](README-en.md)
 
-![hydrogen](/theme/logo-h.svg)
+![hydrogen](./theme/logo-h.svg)
 
-~~点点~~Star~~来一个好吗！秋梨膏！！~~
+~~点点~~Star~~来一个好吗，兄die！~~
 
 # #快速开始
 
-![hydrogen](/theme/a-h.png)
+![hydrogen](theme/a-h.png)
 
 ## #准备
 
