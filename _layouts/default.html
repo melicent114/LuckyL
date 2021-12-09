@@ -1,59 +1,16 @@
----
-layout: compress
-# Default layout
----
-
 <!DOCTYPE html>
-
-{% include lang.html %}
-
-{% capture prefer_mode %}
-  {% if site.theme_mode %}
-    mode="{{ site.theme_mode }}"
-  {% endif %}
-{% endcapture %}
-
-<html lang="{{ site.lang }}"{{ prefer_mode }}>
-
-  {% include head.html %}
-
-  {% unless site.theme_mode %}
-    {% include mode-toggle.html %}
-  {% endunless %}
-
-  <body data-spy="scroll" data-target="#toc">
-
-    {% include sidebar.html %}
-
-    {% include topbar.html %}
-
-    <div id="main-wrapper">
-      <div id="main">
-
-        {{ content }}
-
-        {% include footer.html %}
-
-      </div>
-
-      {% include search-results.html %}
-
-    </div> <!-- #main-wrapper -->
-
-    {% if page.mermaid %}
-      {% include mermaid.html %}
-    {% endif %}
-
-    <div id="mask"></div>
-
-    <a id="back-to-top" href="#" aria-label="back-to-top" class="btn btn-lg btn-box-shadow" role="button">
-      <i class="fas fa-angle-up"></i>
-    </a>
-
-    {% include search-loader.html %}
-
-    {% include js-selector.html %}
-
-  </body>
-
+<html>
+{% include head.html %}
+<body>
+    <!--[if lt IE 10]>
+<div class="alert-danger" role="alert">你的浏览器实在太太太旧了，放学别走，升级完浏览器再说！<a target="_blank" class="alert-link" href="http://browsehappy.com">立即升级</a></div>
+<![endif]-->
+    <input id="nm-switch" type="hidden" value="{{ site.nightMode }}">
+    <div class="visible">
+      {{ content }}
+    </div>
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+    <script src="{{ "/assets/js/prism.js" | relative_url }}"></script>
+    <script src="{{ "/assets/js/index.min.js" | relative_url }}"></script>
+</body>
 </html>
